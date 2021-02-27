@@ -1,38 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8">
 		<title>Political Popularity of Misinformation</title>
 		
 		<!-- Import stylesheet -->
 		<link rel="stylesheet" href="main.css">
-		
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-blue.css">
+		<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+		<!-- To display equations-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		
 	</head>
 
-	<div class="topnavbar">
-		<a class="active" href="#about">Introduction</a>
-		<a href="#ratio">Ratio</a>
-		<a href="#maxes">Maxes</a>
-		<a href="#analysis">Analysis</a>
-		<a href="#results">Results</a>
-	  </div>
-
-
-
 	<body>
-		<h1>Political Popularity of Misinformation</h1>
-		<h2>By:Aaron Chan, Catherine Tao, Matthew Sao</h2>
-		<h2>WIP</h2>
+		<!-- Navigation (Stays on Top) -->
+		<div class="w3-top w3-bar w3-blue">
+		<a href="#home" class="w3-bar-item w3-button">Home</a>
+		<a href="#about" class="w3-bar-item w3-button">About</a>
+		<a href="#intro" class="w3-bar-item w3-button">Introduction</a>
+		<a href="#ratio" class="w3-bar-item w3-button">Ratio</a>
+		<a href="#maxes" class="w3-bar-item w3-button">Maxes</a>
+		<a href="#analysis" class="w3-bar-item w3-button">Analysis</a>
+		</div>
 
-		<div id="about">
-            <h4>Introduction</h4>
-            <h5> Looking at the tweets made by various politicians and analyzing their growth over time and engagement metrics.</h5>
-        </div>
+		<!-- Start Content -->
+		<div id="home" class="w3-content">
 
-		<div id="ratio">
-			<h4><a id="ratio"></a>Ratio</h4>
-			<h5>Ratio of replies to likes and retweets.</h5>
-        </div>
+		<!-- About -->
+		<div id="about" class="w3-container w3-center w3-theme-d3 w3-padding-64">
+			<h1>Political Popularity of Misinformation</h1>
+			<h3>By: Aaron Chan, Catherine Tao, Matthew Sao</h3>
+		</div>
+
+		<!-- About -->
+		<div id="intro" class="w3-container w3-padding-32 w3-theme-l4">
+		<h4 class="w3-center">Introduction</h4>
+		<p>Social media has become the main source of easily accessible and digestible information for field experts and organizations to publicly spread news, but at the same time it has become a place where individuals can spread their beliefs as fact and influence others’ opinions on subjects readers have yet to be informed about. As the internet is a place open for anyone to share information, the validity of information presented is not always guaranteed to be accurate or benevolent.</p>
+		<p>For our research on Political Popularity of Misinformation, we want to research the influence politicians have on Twitter, a well known social media platform for users to voice their opinions to a wider audience. The information shared on Twitter that we are interested in will be grouped into scientific information or conspiracy information. We have chosen ten politicians to represent our scientific group and another ten politicians to represent our misinformation group.  Politicians can easily sway public opinion with a simple tweet, therefore we wanted to analyze how much they can influence other Twitter users with their tweets.  This specific analysis is interesting because we are able to determine whether a politician’s tweet has influence on the public based on tweet engagement and a politician’s growth on Twitter.</p>
+		</div>
+
+		<!-- Ratio -->
+		<div id="ratio" class="w3-row">
+			<div class="w3-container w3-half w3-cell w3-cell-middle w3-padding-64">
+				<h4 class="w3-center">Ratios</h4>
+				<p>To analyze reception to a particular tweet, we chose to use the concept of ratios or “getting ratioed” on Twitter. This is the number of replies to the number of likes and retweets a tweet receives. $$\dfrac{2 * \#\:of\:replies}{\#\:of\:likes + \#\:of\:retweets}$$ Ratios allow for a quantitative way to measure how controversial a tweet is, with higher ratios signaling a more disputed tweet. We weigh replies more heavily than likes and retweets due to the increased amount of effort it takes to write out a reply to a tweet as opposed to liking or retweeting that same tweet.</p> 
+			</div>
+			<div class="w3-container w3-cell w3-half">
+				<img src="/images/Scientific_Ratios.png" alt="Scientific Ratios" style="width:100%">
+				<figcaption>Fig. 1 - Mitt Romney and Lisa Murkowski, our two Republicans of the Scientific group have noticably higher ratios compared to the other politicians in this group.</figcaption>
+				<img src="/images/Misinfo_Ratios.png" alt="Misinformation Ratios" style="width:100%"> 
+				<figcaption>Fig. 2 - Tulsi Gabbard, the only Democrat in our misinformation group has a lower ratio than the rest of the politicians in her group.</figcaption>
+			</div>
+		</div>		
+
+		<!-- Maxes -->
+		<div id="maxes" class="w3-container w3-padding-32 w3-theme-l4">
+		<h4 class="w3-center">Rolling and Cumulative Maxes</h4>
+		<p>For the rolling and cumulative maximum methods, we analyze a politician’s number of likes and retweets over the span of their months active on Twitter.  The purpose of these metrics are to analyze a politician’s growth over time using the given information from each tweet.</p>
+		<p>The rolling maximum value is used to determine the number of likes or retweets for a politician over a specified window.  For example, if we view Bernie Sander’s rolling maximum over twelve months with a window size of 20, we are able to see his growth over the twelve months with the days grouped into sizes of 20.  Each day he tweets, the maximum number of tweets for that day is extracted and we continue this process for each day.</p>
+		<p>The purpose for the cumulative maximum method is to view the cumulative likes and retweets over a politician’s time period on Twitter.  The difference for this method is that there is no window to be specified.  We take the cumulative maximum of tweets for a day and strictly use this number.  This helps measure the cumulative growth over the months of activity.</p>
+		</div>
+
+		<!-- Image Grid for Maxes-->
+		<div class="w3-row w3-margin-top w3-stretch">
+			<div class="w3-half">
+				<img src="/images/Max_All_Sci.png" alt="Maximum Likes Scientific" style="width:100%">
+			</div>
+			<div class="w3-half w3-padding-16">
+				<img src="/images/Max_All_Misinfo.png" alt="Maximum Likes Misinformation" style="width:100%">
+			</div>
+		</div>
+
+		<div class="w3-row w3-margin-top w3-stretch">
+			<div class="w3-half">
+				<img src="/images/Sci_Likes_over_months.png" alt="Scientific Likes Over Months" style="width:100%">
+				<img src="/images/Misinfo_Likes_over_months.png" alt="Misinformation Likes Over Months" style="width:100%">
+			</div>
+			<div class="w3-half">
+				<img src="/images/Comparison_max_over_months.png" alt="AOC and Ted Comparison" style="width:100%">
+				<img src="/images/cumulative_ted_bernie.png" alt="Ted and Bernie Cumulative" style="width:100%">
+			</div>
+		</div>
+
+		<!-- Analysis -->
+		<div id="analysis" class="w3-container w3-padding-32">
+		<h4 class="w3-center">Results and Analysis</h4>
+		</div>
 
 		<br />
 		<br />
@@ -40,49 +98,10 @@
 		<br />
 		<br />
 		<br />
-
-		<div id="maxes">
-			<h4><a id="maxes"></a>Rolling and Cumulative Maxes</h4>
-            <h5>Looking at retweets and likes over a period of time with varying time windows.</h5>
-        </div>
-
-		<br />
-		<br />
 		<br />
 		<br />
 		<br />
 		<br />
 
-		<div id="analysis">
-            <h4><a id="analysis"></a>Analysis</h4>
-            <h5>Discussing our results.</h5>
-        </div>
-
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-
-		<div id="results">
-            <h4>Results and Conclusion</h4>
-            <h5>We conclude...</h5>
-        </div>
-
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		
-		<p1>Last Modified: 02/10/2021</p1>
 	</body>
 </html>

@@ -1,32 +1,14 @@
-h1, h2 { text-align: center; }
+.w3-half {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  margin: 4px 0;
+}
 
-
-.topnavbar {
-    background-color: #1DA1F2;
-    overflow: hidden;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnavbar a {
-    color: #f2f2f2;
-    text-align: right;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    
-  }
-  
-  /* Change the color of links on hover */
-  .topnavbar a:hover {
-    background-color: #657786;
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  /*
-  .topnavbar a.active {
-    background-color: #657786;
-    color: white;
-  }
-  */
-  
+figcaption {
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+  font-size: x-small;
+}
