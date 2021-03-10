@@ -23,7 +23,7 @@
 		<a href="#home" class="w3-bar-item w3-button">Home</a>
 		<a href="#intro" class="w3-bar-item w3-button">Introduction</a>
 		<a href="#ratio" class="w3-bar-item w3-button">Ratio</a>
-		<a href="#maxes" class="w3-bar-item w3-button">Maxes</a>
+		<a href="#popularity" class="w3-bar-item w3-button">Popularity</a>
 		<a href="#permutation" class="w3-bar-item w3-button">Permutations</a>
 		<a href="#results" class="w3-bar-item w3-button">Results</a>
 		</div>
@@ -62,12 +62,13 @@
 			</div>
 		</div>		
 
-		<!-- Maxes -->
-		<div id="maxes" class="w3-container w3-padding-32 w3-theme-l4">
-		<h4 class="w3-center">Rolling and Cumulative Maxes</h4>
-		<p>For the rolling and cumulative maximum methods, we analyze a politician’s number of likes and retweets over the span of their months active on Twitter.  The purpose of these metrics are to analyze a politician’s growth over time using the given information from each tweet.</p>
-		<p>The rolling maximum value is used to determine the number of likes or retweets for a politician over a specified window.  For example, if we view Bernie Sander’s rolling maximum over twelve months with a window size of 20, we are able to see his growth over the twelve months with the days grouped into sizes of 20.  Each day he tweets, the maximum number of tweets for that day is extracted and we continue this process for each day.</p>
-		<p>The purpose for the cumulative maximum method is to view the cumulative likes and retweets over a politician’s time period on Twitter.  The difference for this method is that there is no window to be specified.  We take the cumulative maximum of tweets for a day and strictly use this number.  This helps measure the cumulative growth over the months of activity.</p>
+		<!-- Popularity Estimates -->
+		<div id="popularity" class="w3-container w3-padding-32 w3-theme-l4">
+		<h4 class="w3-center">Popularity Estimates</h4>
+		<p>To estimate the popularity of our politicians, we analyze the number of likes from each tweet for each politician over the span of a few years that they are active on Twitter. The purpose of these metrics are to analyze a politician’s growth over time using the given information from each tweet.</p>
+		<p>Our metrics are split by time or by number of tweets. Over time will track the politician’s Tweet likes over all months that they were active while over tweets will track the number of tweets that the politician has tweeted.</p>
+		<p>The metrics are further divided into either cumulative or rolling. Cumulative will build on the previous amount of likes and build further on it. This is useful to measure the politician who generated the most following to find who may be the “most popular” politician.</p>
+		<p>Our rolling metrics will take into account a trailing period of time or a trailing number of tweets to aggregate on as a way to see how popular politicians are at a given moment of time while also taking into account some recency. The rolling windows will be aggregated by the max of the likes or the average of the likes in the window.</p>
 		</div>
 
 		<!-- Image Grid for Maxes-->
@@ -120,7 +121,7 @@
 	</body>
 
 	<footer>
-		Last Modified: March 7, 2021
+		Last Modified: March 9, 2021
 		<br />
 		Link to our project <a href="https://github.com/aychan3089/PoliticalPopularityofMisinformation" target="_blank">repository</a>.
 		<br />
